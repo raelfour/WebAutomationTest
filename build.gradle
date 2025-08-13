@@ -10,11 +10,31 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
-    testImplementation 'org.seleniumhq.selenium:selenium-java:4.11.0'
-    testImplementation 'io.github.bonigarcia:webdrivermanager:5.6.4'
+    testImplementation 'io.cucumber:cucumber-java:7.14.0'
+    testImplementation 'io.cucumber:cucumber-junit:7.14.0'
+    testImplementation 'io.cucumber:cucumber-core:7.14.0'
+    testImplementation 'org.seleniumhq.selenium:selenium-java:4.15.0'
+    testImplementation 'org.seleniumhq.selenium:selenium-support:4.15.0'
+    testImplementation 'io.github.bonigarcia:webdrivermanager:5.5.3'
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.slf4j:slf4j-simple:1.7.36'
 }
 
 test {
-    useJUnitPlatform()
+    useJUnit()
+    systemProperties System.getProperties()
+    testLogging {
+        events "passed", "skipped", "failed"
+        exceptionFormat "full"
+    }
+}
+
+task cucumberTest(type: Test) {
+    include '**/TestRunner.class'
+}
+
+configurations {
+    cucumberRuntime {
+        extendsFrom testImplementation
+    }
 }

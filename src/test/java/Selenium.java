@@ -21,8 +21,8 @@ public class Selenium {
     public void helloWorld() {
         driver.get("https://jayjay.co");
 
-        String text = driver.findElement(By.className("first-course")).getText();
+        String text = driver.findElement(By.className("content-info")).getText();
 
-        assertEquals("Gebrakan Kursus Online yang Siap Meroketkan Kariermu", text);
+        assertEquals("Belajar dari para ahli terbaik", text);
     }
 }
