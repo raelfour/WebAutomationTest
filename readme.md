@@ -108,14 +108,13 @@ The framework uses POM design pattern with two main page classes:
     - Methods: enterUsername(), enterPassword(), clickLoginButton(), getErrorMessage()
 
 - **HomePage.java**: Handles all home page interactions
-    - Elements: app logo, menu, products, shopping cart
-    - Methods: openMenu(), clickLogout(), getProductNames(), addToCart()
+    - Elements: app logo, menu, products
+    - Methods: openMenu(), clickLogout(), getProductNames()
 
 ### Step Definitions
 - **LoginStepDefinitions.java**: Maps Gherkin steps to Java methods
     - Uses WebDriver setup/teardown with @Before/@After hooks
     - Implements all step definitions for login scenarios
-    - Includes fluent assertions using AssertJ
 
 ### Feature Files
 - **login.feature**: Written in Gherkin syntax (English)
