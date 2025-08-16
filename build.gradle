@@ -1,0 +1,54 @@
+plugins {
+    id 'java'
+    id 'io.qameta.allure' version '2.11.2'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'io.cucumber:cucumber-java:7.18.0'
+    testImplementation 'io.cucumber:cucumber-junit:7.18.0'
+    testImplementation 'io.cucumber:cucumber-picocontainer:7.18.0'
+    testImplementation 'org.seleniumhq.selenium:selenium-java:4.15.0'
+    testImplementation 'org.seleniumhq.selenium:selenium-support:4.15.0'
+    testImplementation 'io.github.bonigarcia:webdrivermanager:5.5.3'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.0'
+    testImplementation 'org.junit.vintage:junit-vintage-engine:5.10.0'
+    testImplementation 'org.assertj:assertj-core:3.24.2'
+}
+
+test {
+    useJUnitPlatform()
+    systemProperties = System.getProperties()
+}
+
+tasks.register('cucumberTest', JavaExec) {
+    dependsOn assemble, testClasses
+    mainClass = "io.cucumber.core.cli.Main"
+    classpath = configurations.testRuntimeClasspath + sourceSets.main.output + sourceSets.test.output
+
+    doFirst {
+        file("${project.buildDir}/cucumber-reports").mkdirs()
+    }
+
+    args = [
+            '--plugin', 'pretty',
+            '--plugin', 'html:build/cucumber-reports/html-report',
+            '--plugin', 'json:build/cucumber-reports/cucumber-report.json',
+            '--plugin', 'junit:build/cucumber-reports/cucumber-junit.xml',
+            '--glue', 'stepDefinitions',
+            'src/test/resources/features'
+    ]
+}
+
+ java {
+     toolchain {
+         languageVersion = JavaLanguageVersion.of(24)
+     }
+ }
