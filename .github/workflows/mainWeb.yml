@@ -8,7 +8,7 @@ on:
     branches: [ "main" ]
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -44,12 +44,12 @@ jobs:
         if: always() #always() # success() , failure(), canceled()
         with:
           name: cucumber reports
-          path: target/cucumber.html  # Path to test reports
+          path: target/cucumber-reports  # Path to test reports
 
        # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         if: always()
         uses: peaceiris/actions-gh-pages@v4.0.0
         with:
-          personal_token: ${{ secrets.PAT }}
-          publish_dir: target
+          personal_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: target/cucumber-reports
