@@ -25,7 +25,7 @@ public class LoginStepDefinitions {
     @Before
     public void setUp() {
 
-        String browserName = System.getProperty("browser", "firefox").toLowerCase();
+        String browserName = System.getProperty("browser", "chrome").toLowerCase();
 
         switch (browserName) {
             case "chrome":
@@ -34,16 +34,14 @@ public class LoginStepDefinitions {
 
                 chromeOptions.addArguments("--no-sandbox");
                 chromeOptions.addArguments("--disable-dev-shm-usage");
-
-
-//                chromeOptions.addArguments("--headless");
+                chromeOptions.addArguments("--headless");
                 driver = new ChromeDriver(chromeOptions);
                 break;
 
             case "firefox":
                 WebDriverManager.firefoxdriver().setup();
                 FirefoxOptions firefoxOptions = new FirefoxOptions();
-//              firefoxOptions.addArguments("--headless");
+                firefoxOptions.addArguments("--headless");
                 driver = new FirefoxDriver(firefoxOptions);
                 break;
 

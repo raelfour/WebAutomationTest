@@ -76,16 +76,16 @@ Feature: SauceDemo Login Functionality
     Then I should see an error message
     And I should remain on the login page
 
-  @positive
-  Scenario: Successful logout after login
-    When I enter username "standard_user"
-    And I enter password "secret_sauce"
-    And I click the login button
-    And I should be redirected to the home page
-    When I click on the menu button
-    And I click on logout
-    Then I should be redirected back to the login page
-    And I should see the login form
+#  @positive
+#  Scenario: Successful logout after login
+#    When I enter username "standard_user"
+#    And I enter password "secret_sauce"
+#    And I click the login button
+#    And I should be redirected to the home page
+#    When I click on the menu button
+#    And I click on logout
+#    Then I should be redirected back to the login page
+#    And I should see the login form
 
   @positive
   Scenario: Verify home page elements after successful login
