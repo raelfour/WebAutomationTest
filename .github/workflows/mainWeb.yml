@@ -44,7 +44,7 @@ jobs:
         if: always() #always() # success() , failure(), canceled()
         with:
           name: cucumber reports
-          path: target/cucumber.html  # Path to test reports
+          path: target/cucumber-reports/cucumber.html  # Path to test reports
 
        # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
