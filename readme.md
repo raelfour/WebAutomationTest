@@ -1,4 +1,4 @@
-# Homework19 - SauceDemo Automation
+# SauceDemo Web Automation Test
 
 ## 📋 Project Overview
 
