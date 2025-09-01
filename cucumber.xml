@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="10.609" tests="9" skipped="0" failures="0" errors="0">
-<testcase classname="SauceDemo Login Functionality" name="Successful login with valid credentials" time="2.094">
+<testsuite name="Cucumber" time="10.244" tests="9" skipped="0" failures="0" errors="0">
+<testcase classname="SauceDemo Login Functionality" name="Successful login with valid credentials" time="2.119">
 <system-out><![CDATA[
 Given I am on the SauceDemo login page......................................passed
 When I enter username "standard_user".......................................passed
@@ -11,7 +11,7 @@ And I should see the products inventory.....................................pass
 And the page title should contain "Products"................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="SauceDemo Login Functionality" name="Login with invalid username" time="0.995">
+<testcase classname="SauceDemo Login Functionality" name="Login with invalid username" time="0.94">
 <system-out><![CDATA[
 Given I am on the SauceDemo login page......................................passed
 When I enter username "invalid_user"........................................passed
@@ -22,7 +22,7 @@ And I should remain on the login page.......................................pass
 And the error message should contain "Username and password do not match"...passed
 ]]></system-out>
 </testcase>
-<testcase classname="SauceDemo Login Functionality" name="Login with invalid password" time="0.971">
+<testcase classname="SauceDemo Login Functionality" name="Login with invalid password" time="0.958">
 <system-out><![CDATA[
 Given I am on the SauceDemo login page......................................passed
 When I enter username "standard_user".......................................passed
@@ -33,7 +33,7 @@ And I should remain on the login page.......................................pass
 And the error message should contain "Username and password do not match"...passed
 ]]></system-out>
 </testcase>
-<testcase classname="SauceDemo Login Functionality" name="Login with empty username" time="0.935">
+<testcase classname="SauceDemo Login Functionality" name="Login with empty username" time="0.912">
 <system-out><![CDATA[
 Given I am on the SauceDemo login page......................................passed
 When I enter username ""....................................................passed
@@ -44,7 +44,7 @@ And I should remain on the login page.......................................pass
 And the error message should contain "Username is required".................passed
 ]]></system-out>
 </testcase>
-<testcase classname="SauceDemo Login Functionality" name="Login with empty password" time="1.005">
+<testcase classname="SauceDemo Login Functionality" name="Login with empty password" time="0.909">
 <system-out><![CDATA[
 Given I am on the SauceDemo login page......................................passed
 When I enter username "standard_user".......................................passed
@@ -55,7 +55,7 @@ And I should remain on the login page.......................................pass
 And the error message should contain "Password is required".................passed
 ]]></system-out>
 </testcase>
-<testcase classname="SauceDemo Login Functionality" name="Login with both fields empty" time="0.93">
+<testcase classname="SauceDemo Login Functionality" name="Login with both fields empty" time="0.898">
 <system-out><![CDATA[
 Given I am on the SauceDemo login page......................................passed
 When I enter username ""....................................................passed
@@ -66,7 +66,7 @@ And I should remain on the login page.......................................pass
 And the error message should contain "Username is required".................passed
 ]]></system-out>
 </testcase>
-<testcase classname="SauceDemo Login Functionality" name="Login with extremely long username" time="1.009">
+<testcase classname="SauceDemo Login Functionality" name="Login with extremely long username" time="1.024">
 <system-out><![CDATA[
 Given I am on the SauceDemo login page......................................passed
 When I enter username "this_is_a_very_long_username_that_exceeds_normal_limits_and_should_be_tested_for_boundary_conditions_in_our_application_testing_framework".passed
@@ -76,7 +76,7 @@ Then I should see an error message..........................................pass
 And I should remain on the login page.......................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="SauceDemo Login Functionality" name="Login with extremely long password" time="1.08">
+<testcase classname="SauceDemo Login Functionality" name="Login with extremely long password" time="0.968">
 <system-out><![CDATA[
 Given I am on the SauceDemo login page......................................passed
 When I enter username "standard_user".......................................passed
@@ -86,7 +86,7 @@ Then I should see an error message..........................................pass
 And I should remain on the login page.......................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="SauceDemo Login Functionality" name="Verify home page elements after successful login" time="1.274">
+<testcase classname="SauceDemo Login Functionality" name="Verify home page elements after successful login" time="1.209">
 <system-out><![CDATA[
 Given I am on the SauceDemo login page......................................passed
 When I enter username "standard_user".......................................passed
